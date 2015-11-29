@@ -3,14 +3,14 @@
 # Pâris I., Petitjean P., Aubourg E., Bailey S., Ross N.P., Myers A.D.,
 # Strauss M.A., Anderson S.F., Arnau E., Bautista J., Bizyaev D.,
 # Bolton A.S., Bovy J., Brandt W.N., Brewington H., Brownstein J.R.,
-# Busca N., Capellupo D., Carithers W., Croft R.A.C., Dawson K., 
+# Busca N., Capellupo D., Carithers W., Croft R.A.C., Dawson K.,
 # Delubac T., Ebelke G., Eisenstein D.J., Engelke P., Fan X., Filiz Ak N.,
-# Finley H., Font-Ribera A., Ge J., Gibson R.R., Hall P.B., Hamann F., 
-# Hennawi J.F., Ho S., Hogg D.W., Ivezic Z., Jiang L., Kimball A.E., 
-# Kirky D., Kirkpatrick J.A., Lee K-G., Le Goff J.-M., Lundgren B., 
-# MacLeod C.L., Malanushenko E., Malanushenko V., Maraston C., 
+# Finley H., Font-Ribera A., Ge J., Gibson R.R., Hall P.B., Hamann F.,
+# Hennawi J.F., Ho S., Hogg D.W., Ivezic Z., Jiang L., Kimball A.E.,
+# Kirky D., Kirkpatrick J.A., Lee K-G., Le Goff J.-M., Lundgren B.,
+# MacLeod C.L., Malanushenko E., Malanushenko V., Maraston C.,
 # McGreer I.D., McMahon R.G., Miralda-Escudé J., Muna D., Noterdaeme P.,
-# Oravetz D., Palanque-Delabrouille N., Pan K., Perez-Fournon I., 
+# Oravetz D., Palanque-Delabrouille N., Pan K., Perez-Fournon I.,
 # Pieri M.M., Richards G.T., Rollinde E., Sheldon E.S., Schlegel D.J.,
 # Schneider D.P., Slosar A., Shelden A., Shen Y., Simmons A., Snedden S.,
 # Suzuki N., Tinker J., Viel M., Weaver B.A., Weinberg D.W., White M.,
@@ -53,7 +53,7 @@
 #  300-308  F9.4   ---    SNR_1700          Median SNR (1650-1750A rest)
 #  310-318  F9.4   ---    SNR_3000          Median SNR (2950-3050A rest)
 #  320-328  F9.4   ---    SNR_5150          Median SNR (5100-5250A rest)
-#  330-338  F9.4   km/s   FWHM_CIV          FWHM of CIV emission    
+#  330-338  F9.4   km/s   FWHM_CIV          FWHM of CIV emission
 #  340-348  F9.4   km/s   BHWHM_CIV         Blue HWHM of CIV emission
 #  350-358  F9.4   km/s   RHWHM_CIV         Red HWHM of CIV emission
 #  360-368  F9.4   ---    AMP_CIV           Amplitude of CIV emission
