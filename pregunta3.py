@@ -32,9 +32,11 @@ coef = fit_datos(bandI, bandZ)
 N_mc = 10000
 params = np.zeros((2, N_mc))
 for i in range(N_mc):
-    fake_bandI = np.random.normal(loc=bandI, scale=errI) # mean and standard desviation
+    fake_bandI = np.random.normal(loc=bandI, scale=errI)
+    # mean and standard desviation
     fake_bandZ = np.random.normal(loc=bandZ, scale=errZ)
-    f_param = fit_datos(fake_bandI, fake_bandZ) # retorna m y posicion
+    f_param = fit_datos(fake_bandI, fake_bandZ)
+    # retorna m y posicion
     params[0][i] = f_param[0]
     params[1][i] = f_param[1]
 m = np.sort(params[0])
@@ -51,7 +53,7 @@ print "b =", coef[1], "[10^-6 Jy]"
 print "El Intervalo de confianza para p es : ", (p_025, p_975), "[10^-6 Jy]"
 xI = np.linspace(-20, 600, 500)
 plt.figure(1)
-plt.errorbar(bandI, bandZ, xerr=errI, yerr=errZ, fmt='g.', label='Mediciones + Error')
+plt.errorbar(bandI, bandZ, xerr=errI, yerr=errZ, fmt='g.', label='Medidas+Err')
 plt.plot(xI, coef[0]*xI + coef[1], 'b', label='Mejor ajuste')
 plt.plot(xI, m_975*xI + p_975, 'y--', label='Zona de confianza')
 plt.legend(loc=2)

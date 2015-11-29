@@ -4,25 +4,27 @@ import numpy as np
 from scipy.optimize import (leastsq, curve_fit)
 import random
 
-'''Este script realiza un ajuste lineal para los datos de Freedman(v=Ho*d) y un Histograma de Ho'''
+'''Este script realiza un ajuste lineal para los datos de
+Freedman(v=Ho*d) y un Histograma de Ho'''
 
 
 np.random.seed(330)
+
 
 def f(H, x):
     return H * x
 
 
 def bootstrap(datos):
-    N_B=100000
+    N_B = 100000
     H = np.zeros(N_B)
-    N=len(datos)
+    N = len(datos)
     for i in range(N_B):
         s = np.random.randint(low=0, high=N, size=N)
-        dist = datos[s,1]
-        vel = datos[s,0]
-        a1 = curve_fit(f,dist, vel)
-        a2 = curve_fit(f,vel, dist)
+        dist = datos[s, 1]
+        vel = datos[s, 0]
+        a1 = curve_fit(f, dist, vel)
+        a2 = curve_fit(f, vel, dist)
         a = (a1[0] + 1/a2[0]) / 2
         H[i] = a
     H = np.sort(H)
@@ -39,8 +41,8 @@ for i in range(len(datosSNI)):
     dSNI[i] = datosSNI[i][1]
     vSNI[i] = datosSNI[i][0]
 
-#dist = data[:, 1]
-#vel = data[:, 0]
+# dist = data[:, 1]
+# vel = data[:, 0]
 
 a_1, a_covarianza_1 = curve_fit(f, dSNI, vSNI)
 a_2, a_covarianza_2 = curve_fit(f, vSNI, dSNI)
@@ -59,7 +61,7 @@ plt.plot(xS, H0*xS, 'b', label='Mejor ajuste')
 plt.plot(xS, H0_conf[0]*xS, 'y--', label='Zona de confianza')
 plt.legend(loc=2)
 plt.plot(xS, H0_conf[1]*xS, 'y--')
-plt.title('Grafico Vel.recesion v/s Distancia + Datos supernovas tipo I Freedman')
+plt.title('Grafico Vel.recesion vs Distancia+Datos supernovas tipo I Freedman')
 plt.xlabel('Distancia a las supernovas [Mpc]')
 plt.ylabel('Velocidad de recesion de las nebulosas [km/s]')
 plt.xlim([0, 500])

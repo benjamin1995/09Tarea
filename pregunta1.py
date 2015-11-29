@@ -27,24 +27,22 @@ a_1, a_covarianza_1 = curve_fit(f, dHubble, vHubble)
 a_2, a_covarianza_2 = curve_fit(f, vHubble, dHubble)
 
 
-
 def bootstrap(datos):
-    N_B=100000
+    N_B = 100000
     H = np.zeros(N_B)
-    N=len(datos)
+    N = len(datos)
     for i in range(N_B):
         s = np.random.randint(low=0, high=N, size=N)
-        dist = datos[s,0]
-        vel = datos[s,1]
-        a1 = curve_fit(f,dist, vel)
-        a2 = curve_fit(f,vel, dist)
+        dist = datos[s, 0]
+        vel = datos[s, 1]
+        a1 = curve_fit(f, dist, vel)
+        a2 = curve_fit(f, vel, dist)
         a = (a1[0] + 1/a2[0]) / 2
         H[i] = a
     H = np.sort(H)
     H_025 = H[int(N_B*0.025)]
     H_975 = H[int(N_B*0.975)]
     return (H_025, H_975, H)
-
 
 
 xH = np.linspace(0, 2.2, 50)
@@ -62,7 +60,7 @@ plt.plot(xH, H0*xH, 'b', label='Mejor ajuste')
 plt.plot(xH, H0_conf[0]*xH, 'y--', label='Zona de confianza')
 plt.legend(loc=2)
 plt.plot(xH, H0_conf[1]*xH, 'y--')
-plt.title('Grafico Vel.recesion v/s Distancia + Datos originales de Edwin Hubble')
+plt.title('Grafico Vel.recesion vs Distancia+Datos originales de Edwin Hubble')
 plt.ylabel('Velocidad de recesion de las nebulosas [km/s]')
 plt.xlabel('Distancia a las nebulosas [Mpc]')
 plt.xlim([0, 2.2])
